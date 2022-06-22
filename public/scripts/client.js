@@ -75,9 +75,25 @@ const renderTweets = function (tweets) {
 
   for (const tweet of tweets) {
     let $tweet = createTweetElement(tweet)
+
     $('.container').append ($tweet)
   }
 }
 
 
-renderTweets(data);
+$('.tweet-form').submit(function (event) {
+  event.preventDefault();
+
+  let $data = $(this).serialize()
+
+  console.log ($data)
+  $.ajax ({
+    type: 'POST',
+    url: '/tweets',
+    data: $data,
+  
+
+
+
+  })
+})
