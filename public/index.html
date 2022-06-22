@@ -37,7 +37,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <!-- App JS -->
-  <script type="text/javascript" src="./scripts/client.js"></script>
+  <script type="text/javascript" src="./scripts/client.js" defer></script>
 
   <!-- counter JS -->
   <script type="text/javascript" src="./scripts/composer-char-counter.js"></script>
@@ -53,7 +53,7 @@
     </aside>
   </nav>
 
-  <header>
+  <header class="profile">
     <div>
       <img src="./images/profile-hex.png">
     </div>
@@ -77,28 +77,33 @@
       </form>
     </section>
 
-    <article class="tweeter-feed">
-        <header class="tweeter-header">
-          <figure>
+    <article class="tweeter-article">
+      <header class="tweeter-header">
+        <figure class="tweeter-profile">
+          <i class="fa-solid fa-user-ninja"></i>
+          <aside class="tweeter-name">Name of person</aside>
+        </figure>
+        
+        <aside class="tweet-handle">@handle</aside>
 
-          </figure>
-          <details></details>
-          <details></details>
+      </header>
 
-        </header>
-
-        <section>
-
-        </section>
-
-
-        <footer class="tweeter-footer">
-          <details></details>
-
-          <details></details>
+      <section class="main-tweet">
+        Main tweet is put here
+      </section>
 
 
-        </footer>
+      <footer class="tweeter-footer">
+        <aside class="date">date posted</aside>
+
+        <aside class="icons">
+          <i class="fa-solid fa-flag"></i>
+          <i class="fa-solid fa-share"></i>
+          <i class="fa-solid fa-heart"></i>
+        </aside>
+
+
+      </footer>
     </article>
   </main>
 </body>
