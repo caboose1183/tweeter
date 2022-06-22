@@ -10,7 +10,7 @@ function createTweetElement(tweetData) {
   const avatar = tweetData.user.avatars;
   const handle = tweetData.user.handle;
   const content = tweetData.content.text;
-  const date = timeago.format (tweetData.created_at);
+  const date = timeago.format(tweetData.created_at);
 
   let $tweet = ` <article class="tweeter-article" >
   <header class="tweeter-header">
@@ -48,26 +48,50 @@ const renderTweets = function (tweets) {
   for (const tweet of tweets) {
     let $tweet = createTweetElement(tweet);
 
-    $('.container').append ($tweet);
+    $('.tweeter-feed').prepend($tweet);
   }
 };
 
 $('.tweet-form').submit(function (event) {
   event.preventDefault();
 
+  if ($("#tweet-text").val().length > 140) {
+    alert("Tweet is too long!");
+    return false;
+  }
+
+  if (!$("#tweet-text").val().length) {
+    alert("Tweet is empty!");
+    return false;
+  }
+
+
+
   let $data = $(this).serialize();
 
-  $.ajax ({
+  $.ajax({
     type: 'POST',
     url: '/tweets',
     data: $data,
   })
+
+  $("#tweet-text").val(null);
+  $('.counter').val(140)
+
+  $.ajax({
+    type: 'GET',
+    url: `/tweets`,
+    success: () => {
+      localTweets();
+    }
+  })
+
 })
 
-function localTweets () {
+function localTweets() {
   let $data = $(this).serialize();
 
-  $.ajax ({
+  $.ajax({
     type: 'GET',
     url: '/tweets',
     data: $data,
@@ -76,3 +100,5 @@ function localTweets () {
     }
   })
 }
+
+localTweets();
