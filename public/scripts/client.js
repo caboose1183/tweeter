@@ -38,7 +38,7 @@ function createTweetElement(tweetData) {
 </article > `
 
   return $tweet;
-}
+};
 
 const renderTweets = function (tweets) {
   // loops through tweets
@@ -46,17 +46,16 @@ const renderTweets = function (tweets) {
   // takes return value and appends it to the tweets container
 
   for (const tweet of tweets) {
-    let $tweet = createTweetElement(tweet)
+    let $tweet = createTweetElement(tweet);
 
-    $('.container').append ($tweet)
+    $('.container').append ($tweet);
   }
-}
-
+};
 
 $('.tweet-form').submit(function (event) {
   event.preventDefault();
 
-  let $data = $(this).serialize()
+  let $data = $(this).serialize();
 
   $.ajax ({
     type: 'POST',
@@ -66,7 +65,7 @@ $('.tweet-form').submit(function (event) {
 })
 
 function localTweets () {
-  let $data = $(this).serialize()
+  let $data = $(this).serialize();
 
   $.ajax ({
     type: 'GET',
