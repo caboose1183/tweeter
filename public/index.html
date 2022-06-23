@@ -58,46 +58,46 @@
     </aside>
   </nav>
 
-  <header class="profile">
-    <div>
-      <img src="./images/profile-hex.png">
-    </div>
-    <br>
-    <div>
-      <h2>Sidney Pang</h2>
-    </div>
-  </header>
+  <section class="header-tweet-box">
 
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-
-    <section class="new-tweet">
-
-      <div class="warning-container">
-        <section class="warning-slide">
-
-          <i class="fa-solid fa-triangle-exclamation"></i>
-          <p class="warning-message">Tweet is over the character limit! Please use less characters.</p>
-          <i class="fa-solid fa-triangle-exclamation"></i>
-
-        </section>
+    <header class="profile">
+      <div>
+        <img src="./images/profile-hex.png">
+        <h2>Sidney Pang</h2>
       </div>
+    </header>
 
-      <h2>Compose Tweet</h2>
-      <form method="POST" action="/tweets" class="tweet-form">
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text" class="tweet-box"></textarea>
-        <div class="tweet-button-counter">
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+
+      <section class="new-tweet">
+
+        <div class="warning-container">
+          <section class="warning-slide">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <p class="warning-message">Tweet is over the character limit! Please use less characters.</p>
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+          </section>
         </div>
-      </form>
-    </section>
 
-    <section class="tweeter-feed">
-    </section>
+        <form method="POST" action="/tweets" class="tweet-form">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text" class="tweet-box"></textarea>
+          <div class="tweet-button-counter">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
 
-  </main>
+      <section class="tweeter-feed">
+      </section>
+
+    </main>
+
+  </section>
 
 </body>
 
