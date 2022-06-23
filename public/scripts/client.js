@@ -51,14 +51,23 @@ const renderTweets = function (tweets) {
 
 $('.tweet-form').submit(function (event) {
   event.preventDefault();
+  $('.warning-container').slideUp('fast');
 
   if ($("#tweet-text").val().length > 140) {
-    alert("Tweet is too long!");
+    setTimeout(() => {
+      $('.warning-message').text("Tweet is over the limit! Please do not exceed character limit!")
+    }, '500')
+    
+    $('.warning-container').slideDown('slow');
     return false;
   }
 
   if (!$("#tweet-text").val().length) {
-    alert("Tweet is empty!");
+    setTimeout(() => {
+      $('.warning-message').text("Tweet is empty! Please write what you are humming about!")
+    }, '500')
+
+    $('.warning-container').slideDown('slow');
     return false;
   }
 

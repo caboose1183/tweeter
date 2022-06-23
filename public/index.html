@@ -70,7 +70,19 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
+
     <section class="new-tweet">
+
+      <div class="warning-container">
+        <section class="warning-slide">
+
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <p class="warning-message">Tweet is over the character limit! Please use less characters.</p>
+          <i class="fa-solid fa-triangle-exclamation"></i>
+
+        </section>
+      </div>
+
       <h2>Compose Tweet</h2>
       <form method="POST" action="/tweets" class="tweet-form">
         <label for="tweet-text">What are you humming about?</label>
@@ -82,8 +94,8 @@
       </form>
     </section>
 
-  <section class="tweeter-feed">
-  </section>
+    <section class="tweeter-feed">
+    </section>
 
   </main>
 
