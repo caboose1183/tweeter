@@ -49,7 +49,7 @@
 </head>
 
 <body>
-  <!-- Top nav bar (fixed) -->
+
   <nav>
     <span>tweeter</span>
     <aside>
@@ -67,7 +67,7 @@
       </div>
     </header>
 
-    <!-- Page-specific (main) content here -->
+
     <main class="container">
 
       <section class="new-tweet">
@@ -84,7 +84,7 @@
 
         <form method="POST" action="/tweets" class="tweet-form">
           <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text" class="tweet-box"></textarea>
+          <textarea name="text" id="tweet-text"></textarea>
           <div class="tweet-button-counter">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
@@ -98,7 +98,5 @@
     </main>
 
   </section>
-
 </body>
-
 </html>

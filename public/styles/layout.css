@@ -20,10 +20,10 @@ html {
 body {
   color: #545149;
   background-color: #f4f1ec;
-  font-size: 24px;
-
-  font-family: 'Source Sans Pro', sans-serif;
   background-image: url("../images/bright-squares.png");
+
+  font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 /*
@@ -32,13 +32,15 @@ body {
 
 .container {
   display: flex;
-  width: 90%;
-
   justify-content: center;
-  margin: 0 auto;
   flex-direction: column;
+  
+  width: 90%;
   min-width: 650px;
+  margin: 0 auto;
 }
+
+/* warning related style */
 
 .over-count {
   color: red;
@@ -62,8 +64,6 @@ body {
   min-width: 650px;
 }
 
-
 .fa-triangle-exclamation {
   color: red;
 }
-

@@ -1,3 +1,5 @@
+/* Form and feed related styles */
+
 .new-tweet {
   display: flex;
   justify-content: center;
@@ -5,9 +7,9 @@
   margin-bottom: 50px;
 }
 
-h2 {
+form {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }
 
 .tweet-button-counter {
@@ -16,21 +18,16 @@ h2 {
   font-family: 'Bungee', cursive;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-
-}
-
 button {
   background-color: #4056A1;
   color: white;
 }
 
-.tweet-box {
+#tweet-text {
   padding: 0;
   margin-bottom: 10px;
   background: transparent;
+
   border: none;
   outline: none;
   resize: none;
@@ -45,6 +42,7 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   border: 3px solid black;
   margin-bottom: 15px;
   border-radius: 25px;
@@ -58,8 +56,9 @@ button {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  width: 100%;
+  align-items: center;
 
+  width: 100%;
   padding-right: 1em;
 }
 
@@ -67,31 +66,26 @@ button {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 13%;
+
+  width: 20%;
 }
 
 .main-tweet {
   display: flex;
+
   width: 95%;
   padding-left: 1em;
   padding-right: 1em;
   padding-bottom: 1em;
   border-bottom: solid black;
-
 }
 
 .tweeter-footer {
   display: flex;
   justify-content: space-between;
+
   width: 95%;
   padding: 1em;
-
-}
-
-.tweeter-feed {
-  max-height: 850px;
-  overflow: auto;
-  border: 5px solid pink
 }
 
 .fa-flag:hover {
