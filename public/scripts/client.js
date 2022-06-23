@@ -13,6 +13,7 @@ function createTweetElement(tweetData) {
   const date = timeago.format(tweetData.created_at);
 
   let $tweet = ` <article class="tweeter-article" >
+
   <header class="tweeter-header">
     <figure class="tweeter-profile">
       <img src=${avatar}></a>
@@ -22,7 +23,7 @@ function createTweetElement(tweetData) {
   </header>
 
   <section class="main-tweet">
-    ${content}
+  <p>${escape(content)}</p>
   </section>
 
   <footer class="tweeter-footer">
@@ -41,10 +42,6 @@ function createTweetElement(tweetData) {
 };
 
 const renderTweets = function (tweets) {
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
-
   for (const tweet of tweets) {
     let $tweet = createTweetElement(tweet);
 
@@ -65,40 +62,36 @@ $('.tweet-form').submit(function (event) {
     return false;
   }
 
-
-
-  let $data = $(this).serialize();
-
-  $.ajax({
+  $.ajax({                          //need fixing double loading
     type: 'POST',
     url: '/tweets',
-    data: $data,
+    data: $(this).serialize(),
+    success: (response) => {
+      loadTweets();
+    }
   })
 
   $("#tweet-text").val(null);
   $('.counter').val(140)
 
-  $.ajax({
-    type: 'GET',
-    url: `/tweets`,
-    success: () => {
-      localTweets();
-    }
-  })
-
 })
 
-function localTweets() {
-  let $data = $(this).serialize();
+function loadTweets() {
 
   $.ajax({
     type: 'GET',
     url: '/tweets',
-    data: $data,
+    data: $(this).serialize(),
     success: response => {
       renderTweets(response)
     }
   })
 }
 
-localTweets();
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
+loadTweets()
