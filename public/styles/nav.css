@@ -5,7 +5,7 @@ nav {
 
   background-color: #303F9F;
   color: #FFFFFF;
-  
+
   height: 120px;
   width: 100%;
   padding-left: 1.5em;
@@ -25,9 +25,29 @@ nav aside {
   flex-direction: column;
 }
 
+
 .fa-angles-down {
   color: red;
   margin-bottom: 1em;
+
+  animation-duration: 2s;
+  animation-name: header-arrow;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes header-arrow {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .head-tweet {
