@@ -46,6 +46,7 @@ button {
   border: 3px solid black;
   margin-bottom: 15px;
   border-radius: 25px;
+  background-color: #FFFFFF;
 }
 
 .tweeter-article:hover {
