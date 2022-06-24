@@ -71,7 +71,7 @@ $('.tweet-form').submit(function (event) {
     return false;
   }
 
-  $.ajax({                          //need fixing double loading
+  $.ajax({ 
     type: 'POST',
     url: '/tweets',
     data: $(this).serialize(),
@@ -92,7 +92,6 @@ $('.fa-angles-down').click(function () {
 })
 
 function loadTweets() {
-
   $.ajax({
     type: 'GET',
     url: '/tweets',
