@@ -66,3 +66,22 @@ body {
 .fa-triangle-exclamation {
   color: red;
 }
+
+.scroll-top-button {
+  display: none;
+}
+
+.fa-circle-up {
+
+  cursor: pointer;
+
+  color: blue;
+
+  position: fixed; 
+  bottom: 30px;
+  right: 30px;
+}
+
+.fa-circle-up:hover {
+  color: rgb(3, 118, 250);
+}

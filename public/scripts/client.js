@@ -49,48 +49,6 @@ const renderTweets = function (tweets) {
   }
 };
 
-$('.tweet-form').submit(function (event) {
-  event.preventDefault();
-  $('.warning-container').slideUp('fast');
-
-  if ($("#tweet-text").val().length > 140) {
-    setTimeout(() => {
-      $('.warning-message').text("Tweet is over the limit! Please do not exceed character limit!")
-    }, '500')
-    
-    $('.warning-container').slideDown('slow');
-    return false;
-  }
-
-  if (!$("#tweet-text").val().length) {
-    setTimeout(() => {
-      $('.warning-message').text("Tweet is empty! Please write what you are humming about!")
-    }, '500')
-
-    $('.warning-container').slideDown('slow');
-    return false;
-  }
-
-  $.ajax({ 
-    type: 'POST',
-    url: '/tweets',
-    data: $(this).serialize(),
-    success: (response) => {
-      $('.tweeter-feed').empty();
-      loadTweets();
-    }
-  })
-
-  $("#tweet-text").val(null);
-  $('.counter').val(140)
-
-})
-
-$('.fa-angles-down').click(function () {
-  $('.warning-container').slideUp('fast');
-  $('.form-container').slideToggle();
-})
-
 function loadTweets() {
   $.ajax({
     type: 'GET',
@@ -100,7 +58,62 @@ function loadTweets() {
       renderTweets(response)
     }
   })
-}
+};
+
+$('.tweet-form').submit(function (event) {
+  event.preventDefault();
+  $('.warning-container').slideUp('fast');
+
+  if ($("#tweet-text").val().length > 140) {
+    setTimeout(() => {
+      $('.warning-message').text("Tweet is over the limit! Please do not exceed character limit!")
+    }, '300');
+    
+    $('.warning-container').slideDown('slow');
+    return false;
+  };
+
+  if (!$("#tweet-text").val().length) {
+    setTimeout(() => {
+      $('.warning-message').text("Tweet is empty! Please write what you are humming about!")
+    }, '300');
+
+    $('.warning-container').slideDown('slow');
+    return false;
+  };
+
+  $.ajax({ 
+    type: 'POST',
+    url: '/tweets',
+    data: $(this).serialize(),
+    success: (response) => {
+      $('.tweeter-feed').empty();
+      loadTweets();
+    }
+  });
+
+  $("#tweet-text").val(null);
+  $('.counter').val(140);
+
+});
+
+$('.fa-angles-down').click(function () {
+  $('.warning-container').slideUp('fast');
+  $('.form-container').slideToggle();
+});
+
+$(window).scroll( () => { 
+  if ($(this).scrollTop() > 100) {
+    $('.scroll-top-button').fadeIn();
+  } else {
+    $('.scroll-top-button').fadeOut();
+  }
+});
+
+$('.fa-circle-up').click( () => { 
+  $('html, body').animate ({scrollTop: 0}, 'slow')
+  return false;
+});
 
 const escape = function (str) {
   let div = document.createElement("div");
@@ -108,4 +121,4 @@ const escape = function (str) {
   return div.innerHTML;
 };
 
-loadTweets()
+loadTweets();
