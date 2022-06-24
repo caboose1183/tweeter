@@ -12,6 +12,10 @@ form {
   flex-direction: column;
 }
 
+form label {
+  font-weight: bold;
+}
+
 .tweet-button-counter {
   display: flex;
   justify-content: space-between;
@@ -27,6 +31,8 @@ button {
   padding: 0;
   margin-bottom: 10px;
   background: transparent;
+
+  padding-top: 1em;
 
   border: none;
   outline: none;
@@ -77,7 +83,6 @@ button {
   width: 95%;
   padding-left: 1em;
   padding-right: 1em;
-  padding-bottom: 1em;
   border-bottom: solid black;
 }
 
@@ -90,11 +95,11 @@ button {
 }
 
 .fa-flag:hover {
-  color: yellow;
+  color: #448AFF;
 }
 .fa-share:hover {
-  color: yellow;
+  color: #448AFF;
 }
 .fa-heart:hover {
-  color: yellow;
+  color: #448AFF;
 }
