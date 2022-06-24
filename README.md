@@ -6,9 +6,9 @@ This single-page AJAX-based Twitter clone uses jQuery, HTML5 and plain CSS3 to s
 
 ## Final Product
 
-!["Desktop View of Tweeter Page] (https://github.com/caboose1183/tweeter/blob/master/docs/Desktop%20View%20Main%20Tweeter%20Page.png?raw=true)
+!["Desktop View of Tweeter Page](https://github.com/caboose1183/tweeter/blob/master/docs/Desktop%20View%20Main%20Tweeter%20Page.png?raw=true)
 
-!["Mobile View of Tweeter Page] (https://github.com/caboose1183/tweeter/blob/master/docs/Mobile%20View%20Tweeter%20Page.png?raw=true)
+!["Mobile View of Tweeter Page](https://github.com/caboose1183/tweeter/blob/master/docs/Mobile%20View%20Tweeter%20Page.png?raw=true)
 
 ## Getting Started
 
