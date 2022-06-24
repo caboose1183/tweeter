@@ -2,7 +2,7 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-This single-page AJAX-based Twitter clone uses jQuery, HTML5 and plain CSS3 to showcase student knowledge and skills with front-end technologies in the Lighthouse Labs bootcamp. 
+This single-page AJAX-based Twitter clone uses jQuery, HTML5 and plain CSS3 to showcase student knowledge and skills with front-end technologies in the Lighthouse Labs bootcamp. Imlemented was a "scroll to top" button when scrolling down the page. Also includes function of a toggle menue for the form which slides down or up.
 
 ## Final Product
 
