@@ -49,7 +49,6 @@
 </head>
 
 <body>
-
   <nav>
     <span>tweeter</span>
     <aside>
@@ -82,14 +81,18 @@
           </section>
         </div>
 
-        <form method="POST" action="/tweets" class="tweet-form">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text" placeholder="What are you craving? Movie recommendations?"></textarea>
-          <div class="tweet-button-counter">
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
+        <div class="form-container">
+          <form method="POST" action="/tweets" class="tweet-form">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text" placeholder="What are you craving? Movie recommendations?"></textarea>
+
+            <div class="tweet-button-counter">
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+
+          </form>
+        </div>
       </section>
 
       <section class="tweeter-feed">
@@ -99,4 +102,5 @@
 
   </section>
 </body>
+
 </html>

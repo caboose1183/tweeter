@@ -30,6 +30,8 @@ nav aside {
   color: red;
   margin-bottom: 1em;
 
+  cursor: pointer;
+
   animation-duration: 2s;
   animation-name: header-arrow;
   animation-iteration-count: infinite;

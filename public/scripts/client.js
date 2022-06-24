@@ -76,6 +76,7 @@ $('.tweet-form').submit(function (event) {
     url: '/tweets',
     data: $(this).serialize(),
     success: (response) => {
+      $('.tweeter-feed').empty();
       loadTweets();
     }
   })
@@ -83,6 +84,11 @@ $('.tweet-form').submit(function (event) {
   $("#tweet-text").val(null);
   $('.counter').val(140)
 
+})
+
+$('.fa-angles-down').click(function () {
+  $('.warning-container').slideUp('fast');
+  $('.form-container').slideToggle();
 })
 
 function loadTweets() {
