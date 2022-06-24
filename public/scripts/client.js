@@ -59,6 +59,12 @@ function loadTweets() {
   })
 };
 
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 $('.tweet-form').submit(function (event) {
   event.preventDefault();
   $('.warning-container').slideUp('fast');
@@ -67,7 +73,7 @@ $('.tweet-form').submit(function (event) {
     setTimeout(() => {
       $('.warning-message').text("Tweet is over the limit! Please do not exceed character limit!")
     }, '300');
-    
+
     $('.warning-container').slideDown('slow');
     return false;
   };
@@ -81,7 +87,7 @@ $('.tweet-form').submit(function (event) {
     return false;
   };
 
-  $.ajax({ 
+  $.ajax({
     type: 'POST',
     url: '/tweets',
     data: $(this).serialize(),
@@ -101,7 +107,7 @@ $('.fa-angles-down').click(function () {
   $('.form-container').slideToggle();
 });
 
-$(window).scroll( () => { 
+$(window).scroll(() => {
   if ($(this).scrollTop() > 100) {
     $('.scroll-top-button').fadeIn();
   } else {
@@ -109,15 +115,9 @@ $(window).scroll( () => {
   }
 });
 
-$('.fa-circle-up').click( () => { 
-  $('html, body').animate ({scrollTop: 0}, 'slow')
+$('.fa-circle-up').click(() => {
+  $('html, body').animate({ scrollTop: 0 }, 'slow')
   return false;
 });
-
-const escape = function (str) {
-  let div = document.createElement("div");
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-};
 
 loadTweets();
