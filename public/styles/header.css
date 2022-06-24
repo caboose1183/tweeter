@@ -41,7 +41,6 @@ h2 {
 
 }
 
- /* Another tablet breakpoint is minimum width of 768px */
 @media only screen and (min-width: 768px) {
   .header-tweet-box {
     display: flex;

@@ -4,7 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
 function createTweetElement(tweetData) {
   const name = tweetData.user.name;
   const avatar = tweetData.user.avatars;
