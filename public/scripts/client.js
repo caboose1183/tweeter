@@ -104,7 +104,9 @@ $('.tweet-form').submit(function (event) {
 
 $('.fa-angles-down').click(function () {
   $('.warning-container').slideUp('fast');
+  
   $('.form-container').slideToggle();
+  $('textarea').focus();
 });
 
 $(window).scroll(() => {
